@@ -1,0 +1,20 @@
+/target
+/local
+/bin
+/build
+.DS_Store
+
+!.gitignore
+
+# Eclipse, Netbeans and IntelliJ files
+/.classpath
+/.project
+/.mvn
+/.settings
+/nbproject
+/.idea
+/*.ipr
+/*.iws
+/*.iml
+
+

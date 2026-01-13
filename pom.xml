@@ -1,0 +1,151 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  
+  <modelVersion>4.0.0</modelVersion>
+  
+  <parent>
+    <groupId>org.wildfly.quickstarts</groupId>
+    <artifactId>wildfly-quickstart-parent</artifactId>
+    <!-- Maintain separation between the artifact id and the version to help prevent
+        merge conflicts between commits changing the GA and those changing the V.
+      -->
+    <version>10</version>
+    <relativePath/>
+  </parent>
+  
+  <groupId>io.github.futokiyo</groupId>
+  <artifactId>febtips04</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java.version.source>17</java.version.source>
+    <java.version.target>17</java.version.target>
+    <java.compiler.debug>true</java.compiler.debug>
+    <maven.compiler.source>${java.version.source}</maven.compiler.source>
+    <maven.compiler.target>${java.version.target}</maven.compiler.target>
+    <!-- the version for the Server -->
+    <version.server>39.0.0.Beta1</version.server>
+    <!-- the versions for BOMs, Packs and Plugins -->
+    <version.bom.ee>${version.server}</version.bom.ee>
+    <version.plugin.wildfly>5.1.5.Final</version.plugin.wildfly>
+    <jakarta.ws.rs-api.version>4.0.0</jakarta.ws.rs-api.version>
+    <weld-core-impl.version>5.1.5.Final</weld-core-impl.version>
+    <logback-classic.version>1.5.24</logback-classic.version>
+    <maven-compiler-plugin.version>3.14.1</maven-compiler-plugin.version>
+    <maven-war-plugin.version>3.5.1</maven-war-plugin.version>
+  </properties>
+  
+  <dependencyManagement>
+    <dependencies>
+      <!-- importing the ee-with-tools BOM adds specs and other useful artifacts as managed dependencies -->
+      <dependency>
+        <groupId>org.wildfly.bom</groupId>
+        <artifactId>wildfly-ee-with-tools</artifactId>
+        <version>${version.bom.ee}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+  
+  <dependencies>
+  
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>${logback-classic.version}</version>
+    </dependency>
+  
+    <!-- Import the Jakarta REST API, we use provided scope as the API is included in the server -->
+    <dependency>
+      <groupId>jakarta.ws.rs</groupId>
+      <artifactId>jakarta.ws.rs-api</artifactId>
+      <version>${jakarta.ws.rs-api.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <!-- Import the CDI API, we use provided scope as the API is included in
+            JBoss EAP -->
+    <dependency>
+      <groupId>jakarta.enterprise</groupId>
+      <artifactId>jakarta.enterprise.cdi-api</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    
+    <!-- Source: https://mvnrepository.com/artifact/org.jboss.weld/weld-core-impl -->
+    <dependency>
+      <groupId>org.jboss.weld</groupId>
+      <artifactId>weld-core-impl</artifactId>
+      <version>${weld-core-impl.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    
+  </dependencies>
+  
+  
+  <build>
+    <plugins>
+    
+      <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-checkstyle-plugin</artifactId>
+          <configuration>
+		    <skip>true</skip>
+          </configuration>
+      </plugin>    
+    
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven-compiler-plugin.version}</version>
+        <configuration>
+          <source>${java.version.source}</source>
+          <target>${java.version.target}</target>
+          <release>${java.release}</release>
+          <encoding>${project.build.sourceEncoding}</encoding>
+          <debug>${java.compiler.debug}</debug>
+          <debuglevel>lines,vars,source</debuglevel>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>${maven-war-plugin.version}</version>
+        <configuration>
+          <warSourceDirectory>src/main/webapp</warSourceDirectory>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  
+  <repositories>
+    <repository>
+      <id>jboss-public-maven-repository</id>
+      <name>JBoss Public Maven Repository</name>
+      <url>https://repository.jboss.org/nexus/content/groups/public/</url>
+      <releases>
+        <enabled>true</enabled>
+        <updatePolicy>never</updatePolicy>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>never</updatePolicy>
+      </snapshots>
+      <layout>default</layout>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>jboss-public-maven-repository</id>
+      <name>JBoss Public Maven Repository</name>
+      <url>https://repository.jboss.org/nexus/content/groups/public/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
+</project>

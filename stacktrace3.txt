@@ -1,0 +1,275 @@
+13:30:24,758 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0040: secure-socket-binding (management-https) を使い http 管理サービスを作成しています。
+13:30:24,809 INFO  [org.xnio] (MSC service thread 1-5) XNIO version 3.8.16.Final-redhat-00001
+13:30:24,832 INFO  [org.xnio.nio] (MSC service thread 1-5) XNIO NIO Implementation Version 3.8.16.Final-redhat-00001
+13:30:24,990 INFO  [org.jboss.as.jaxrs] (ServerService Thread Pool -- 58) WFLYRS0016: RESTEasy バージョン 6.2.11.Final-redhat-00001
+13:30:25,076 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 74) WFLYTX0013: /subsystem=transactions の node-identifier 属性はデフォルト値に設定されています。これは、複数のサーバーを実行する環境では危険です。属性の値が一意になるようにしてください。
+13:30:25,179 INFO  [org.wildfly.extension.health] (ServerService Thread Pool -- 54) WFLYHEALTH0001: ベースヘルスサブシステムのアクティブ化
+13:30:25,217 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 63) WFLYJSF0007: 以下の Jakarta Server Faces 実装をアクティベートしました。[main]
+13:30:25,379 INFO  [org.wildfly.extension.metrics] (ServerService Thread Pool -- 66) WFLYMETRICS0001: ベースメトリクスサブシステムのアクティブ化
+13:30:25,379 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 56) WFLYCLINF0001: Infinispan サブシステムを有効化しています。
+13:30:25,380 INFO  [org.wildfly.extension.elytron.oidc._private] (ServerService Thread Pool -- 53) WFLYOIDC0001: WildFly Elytron OIDC サブシステムのアクティブ化
+13:30:25,411 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 67) WFLYNAM0001: ネーミングサブシステムを有効にしています。
+13:30:25,635 INFO  [org.jboss.as.connector] (MSC service thread 1-1) WFLYJCA0009: Jakarta Connectors サブシステム (WildFly/IronJacamar 3.0.13.Final-redhat-00001) を開始しています
+13:30:25,725 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 76) WFLYWS0002: WebServices Extension を有効にしています。
+13:30:25,889 INFO  [org.wildfly.iiop.openjdk] (ServerService Thread Pool -- 55) WFLYIIOP0001: IIOP サブシステムの有効化
+13:30:25,901 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-6) WFLYUT0003: Undertow 2.3.18.SP1-redhat-00001 の起動中
+13:30:25,988 INFO  [org.jboss.as.naming] (MSC service thread 1-2) WFLYNAM0003: ネーミングサービスを開始しています。
+13:30:26,182 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 44) WFLYJCA0004: JDBC 準拠のドライバー class org.h2.Driver (バージョン 2.1) をデプロイしています
+13:30:26,422 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-6) WFLYJCA0018: driver-name = h2 でドライバーサービスを開始しました
+13:30:26,717 WARN  [org.wildfly.extension.elytron] (MSC service thread 1-2) WFLYELY00023: KeyStore ファイル 'C:\opt\jboss\eap800\standalone\configuration\application.keystore' は存在しません。空白を使用しました。
+13:30:26,961 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 75) WFLYUT0014: オプション [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]'] でパス 'C:\opt\jboss\eap800/welcome-content' のファイルハンドラーを作成します
+13:30:27,121 WARN  [org.wildfly.extension.elytron] (MSC service thread 1-2) WFLYELY01084: キーストア C:\opt\jboss\eap800\standalone\configuration\application.keystore が見つかりません。これは初回使用時にホスト localhost の自己署名証明書を使用して自動生成されます
+13:30:27,512 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 44) WFLYJCA0004: JDBC 準拠のドライバー class oracle.jdbc.driver.OracleDriver (バージョン 19.23) をデプロイしています
+13:30:27,514 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-6) WFLYJCA0018: driver-name = oracle でドライバーサービスを開始しました
+13:30:27,955 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-8) WFLYMAIL0001: メールセッション [java:jboss/mail/Default] をバインドしました。
+13:30:28,335 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 57) WFLYIO001: 20 個の利用可能なプロセッサーを基にして、ワーカー 'default' は 320 個の最大タスクスレッドを持つ 40 個の IO スレッドに自動設定しました
+13:30:28,538 INFO  [org.jboss.remoting] (MSC service thread 1-5) JBoss Remoting version 5.0.30.Final-redhat-00001
+13:30:28,693 INFO  [org.jboss.as.ejb3] (MSC service thread 1-4) WFLYEJB0482: 厳格なプール mdb-strict-max-pool は、このホストの CPU 数から派生された 80 の最大インスタンスサイズ (クラスごと) を使用しています。
+13:30:28,693 INFO  [org.jboss.as.ejb3] (MSC service thread 1-8) WFLYEJB0481: 厳格なプール slsb-strict-max-pool は、スレッドワーカープールのサイズから派生された 320 の最大インスタンスサイズ (クラスごと) を使用しています。
+13:30:28,768 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0012: サーバー default-server を起動しました。
+13:30:28,772 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) Queuing requests.
+13:30:28,799 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-5) WFLYUT0018: ホスト default-host が起動しています
+13:30:29,115 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0006: Undertow HTTP リスナー default が 127.0.0.1:8080 でリッスンしています
+13:30:29,321 INFO  [org.jboss.as.ejb3] (MSC service thread 1-1) WFLYEJB0493: Jakarta Enterprise Beans サブシステムの一時停止が完了しました
+13:30:29,373 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-7) WFLYUT0006: Undertow HTTPS リスナー https が 127.0.0.1:8443 でリッスンしています
+13:30:29,494 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-5) WFLYJCA0001: データソース [java:jboss/datasources/ExampleDS] をバインドしました
+13:30:29,494 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-3) WFLYJCA0001: データソース [java:jboss/SpringBatchJobRepoDS] をバインドしました
+13:30:29,496 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-6) WFLYJCA0001: データソース [java:jboss/myDs] をバインドしました
+13:30:29,820 INFO  [org.wildfly.iiop.openjdk] (MSC service thread 1-8) WFLYIIOP0009: CORBA ORB サービスを開始しました
+13:30:42,329 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0027: "sbod-sample-ap0-0.0.1-beta1-SNAPSHOT.war" (runtime-name: "sbod-sample-ap0-0.0.1-beta1-SNAPSHOT.war") のデプロイメントを開始しました。
+13:30:42,329 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0027: "febtips01-0.0.1-SNAPSHOT.war" (runtime-name: "febtips01-0.0.1-SNAPSHOT.war") のデプロイメントを開始しました。
+13:30:42,329 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0027: "febtips04-0.0.1-SNAPSHOT.war" (runtime-name: "febtips04-0.0.1-SNAPSHOT.war") のデプロイメントを開始しました。
+13:30:42,389 INFO  [org.wildfly.extension.messaging-activemq] (MSC service thread 1-8) WFLYMSGAMQ0001: AIO はこのプラットフォームにありませんでした。Pure Java NIO を使用してフォールバックします。
+13:30:42,662 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 79) AMQ221000: Primary message broker is starting with configuration Broker Configuration (clustered=false,journalDirectory=C:\opt\jboss\eap800\standalone\data\activemq\journal,bindingsDirectory=C:\opt\jboss\eap800\standalone\data\activemq\bindings,largeMessagesDirectory=C:\opt\jboss\eap800\standalone\data\activemq\largemessages,pagingDirectory=C:\opt\jboss\eap800\standalone\data\activemq\paging)
+13:30:42,772 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 79) AMQ221013: Using NIO Journal
+13:30:43,070 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 79) AMQ221043: Protocol module found: [artemis-server]. Adding protocol support for: CORE
+13:30:43,072 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 79) AMQ221043: Protocol module found: [artemis-hornetq-protocol]. Adding protocol support for: HORNETQ
+13:30:43,935 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 79) AMQ221034: Waiting indefinitely to obtain primary lock
+13:30:43,936 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 79) AMQ221035: Primary Server Obtained primary lock
+13:30:46,715 INFO  [org.jboss.ws.common.management] (MSC service thread 1-1) JBWS022052: Starting JBossWS 7.3.1.Final-redhat-00001 (Apache CXF 4.0.5.redhat-00001)
+13:30:47,978 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 79) AMQ221003: Deploying ANYCAST queue jms.queue.ExpiryQueue on address jms.queue.ExpiryQueue
+13:30:48,000 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 79) AMQ221003: Deploying ANYCAST queue jms.queue.DLQ on address jms.queue.DLQ
+13:30:48,129 INFO  [org.wildfly.extension.messaging-activemq] (MSC service thread 1-1) WFLYMSGAMQ0016: http-acceptor-throughput アクセプターによって処理される activemq-remoting プロトコルの登録済み HTTP アップグレード
+13:30:48,129 INFO  [org.wildfly.extension.messaging-activemq] (MSC service thread 1-8) WFLYMSGAMQ0016: http-acceptor アクセプターによって処理される activemq-remoting プロトコルの登録済み HTTP アップグレード
+13:30:48,129 INFO  [org.wildfly.extension.messaging-activemq] (MSC service thread 1-2) WFLYMSGAMQ0016: http-acceptor アクセプターによって処理される activemq-remoting プロトコルの登録済み HTTP アップグレード
+13:30:48,129 INFO  [org.wildfly.extension.messaging-activemq] (MSC service thread 1-4) WFLYMSGAMQ0016: http-acceptor-throughput アクセプターによって処理される activemq-remoting プロトコルの登録済み HTTP アップグレード
+13:30:49,185 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 79) AMQ221007: Server is now active
+13:30:49,187 INFO  [org.apache.activemq.artemis.core.server] (ServerService Thread Pool -- 79) AMQ221001: Apache ActiveMQ Artemis Message Broker version 2.33.0.redhat-00016 [default, nodeID=7785086e-1f7f-11f0-86a3-105fad5c15e3]
+13:30:49,233 INFO  [org.wildfly.extension.messaging-activemq] (ServerService Thread Pool -- 83) WFLYMSGAMQ0002: jndi 名 java:/ConnectionFactory へメッセージングオブジェクトをバインドしました
+13:30:49,282 INFO  [org.wildfly.extension.messaging-activemq] (ServerService Thread Pool -- 82) WFLYMSGAMQ0002: jndi 名 java:jboss/exported/jms/RemoteConnectionFactory へメッセージングオブジェクトをバインドしました
+13:30:49,377 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-8) WFLYJCA0007: 接続ファクトリ java:/JmsXA を登録しました
+13:30:49,518 INFO  [org.apache.activemq.artemis.ra.ActiveMQRALogger] (MSC service thread 1-8) AMQ151007: Resource adaptor started
+13:30:49,520 INFO  [org.jboss.as.connector.services.resourceadapters.ResourceAdapterActivatorService$ResourceAdapterActivator] (MSC service thread 1-8) IJ020002: Deployed: file://RaActivatoractivemq-ra
+13:30:49,524 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-5) WFLYJCA0002: Jakarta Connectors ConnectionFactory [java:/JmsXA] をバインドました
+13:30:49,525 INFO  [org.jboss.as.connector.deployment] (MSC service thread 1-7) WFLYJCA0118: java:/JmsXA という名前の接続ファクトリーをエイリアス java:jboss/DefaultJMSConnectionFactory にバインドします
+13:30:49,862 INFO  [org.wildfly.prospero] (Controller Boot Thread)  version: 1.1.17.Final-redhat-00006
+13:30:49,999 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-5) WFLYDS0013: ディレクトリー C:\opt\jboss\eap800\standalone\deployments の FileSystemDeploymentService が起動しました。
+13:30:53,386 INFO  [org.jboss.weld.deployer] (MSC service thread 1-8) WFLYWELD0003: Weld デプロイメント febtips04-0.0.1-SNAPSHOT.war を処理しています
+13:30:53,386 INFO  [org.jboss.weld.deployer] (MSC service thread 1-4) WFLYWELD0003: Weld デプロイメント febtips01-0.0.1-SNAPSHOT.war を処理しています
+13:30:53,411 INFO  [org.wildfly.core.installationmanager] (MSC service thread 1-7) WFLYIM0023: Installation provisioning is using the following channel versions: '[ManifestVersion{channelId='org.jboss.eap.channels:eap-8.0', description='EAP 8.0 Update 7.0', version='1.7.0.GA-redhat-00006'}]'
+13:30:56,662 INFO  [org.hibernate.validator.internal.util.Version] (MSC service thread 1-4) HV000001: Hibernate Validator 8.0.1.Final-redhat-00001
+13:30:57,868 INFO  [org.jboss.weld.Version] (MSC service thread 1-3) WELD-000900: 5.1.5 (redhat)
+13:31:01,332 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 86) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class io.github.futokiyo.febtips01.rest.JakartaRESTActivator
+13:31:01,332 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 87) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class io.github.futokiyo.febtips01.rest.JakartaRESTActivator
+13:31:03,109 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 87) WFLYUT0021: 登録された web コンテキスト: '/febtips04-0.0.1-SNAPSHOT' (サーバー 'default-server' 用)
+13:31:03,125 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 86) WFLYUT0021: 登録された web コンテキスト: '/febtips01-0.0.1-SNAPSHOT' (サーバー 'default-server' 用)
+13:31:23,163 WARN  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0059: /C:/Users/futoshi.yoshizaki/content/sbod-sample-ap0-0.0.1-beta1-SNAPSHOT.war/WEB-INF/lib/jaxb-core-4.0.5.jar のクラスパスエントリー jakarta.activation-api.jar は、Class-Path 参照において有効な jar を参照していません。
+13:31:23,164 WARN  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0059: /C:/Users/futoshi.yoshizaki/content/sbod-sample-ap0-0.0.1-beta1-SNAPSHOT.war/WEB-INF/lib/jaxb-core-4.0.5.jar のクラスパスエントリー jakarta.xml.bind-api.jar は、Class-Path 参照において有効な jar を参照していません。
+13:31:23,170 WARN  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0059: /C:/Users/futoshi.yoshizaki/content/sbod-sample-ap0-0.0.1-beta1-SNAPSHOT.war/WEB-INF/lib/jaxb-impl-4.0.5.jar のクラスパスエントリー jaxb-core.jar は、Class-Path 参照において有効な jar を参照していません。
+13:31:23,171 WARN  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0059: /C:/Users/futoshi.yoshizaki/content/sbod-sample-ap0-0.0.1-beta1-SNAPSHOT.war/WEB-INF/lib/jaxb-impl-4.0.5.jar のクラスパスエントリー angus-activation.jar は、Class-Path 参照において有効な jar を参照していません。
+13:31:25,318 WARN  [org.jboss.as.dependency.private] (MSC service thread 1-3) WFLYSRV0018: デプロイメント "deployment.sbod-sample-ap0-0.0.1-beta1-SNAPSHOT.war" はプライベートモジュール ("org.jboss.vfs") を使っていますが、このモジュールは今後のバージョンで予告なく変更または削除される可能性があります。
+13:31:25,516 INFO  [org.jboss.weld.deployer] (MSC service thread 1-6) WFLYWELD0003: Weld デプロイメント sbod-sample-ap0-0.0.1-beta1-SNAPSHOT.war を処理しています
+13:31:28,492 INFO  [org.infinispan.CONTAINER] (ServerService Thread Pool -- 97) ISPN000556: Starting user marshaller 'org.wildfly.clustering.infinispan.marshall.InfinispanProtoStreamMarshaller'
+13:31:29,580 INFO  [org.infinispan.CONFIG] (MSC service thread 1-1) ISPN000152: Passivation configured without an eviction policy being selected. Only manually evicted entities will be passivated.
+13:31:29,583 INFO  [org.infinispan.CONFIG] (MSC service thread 1-1) ISPN000152: Passivation configured without an eviction policy being selected. Only manually evicted entities will be passivated.
+13:31:30,712 INFO  [org.infinispan.CONTAINER] (ServerService Thread Pool -- 97) ISPN000025: wakeUpInterval is <= 0, not starting expired purge thread
+13:31:30,725 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 97) WFLYCLINF0002: web コンテナーから sbod-sample-ap0-0.0.1-beta1-SNAPSHOT.war キャッシュを開始しました。
+13:31:30,919 INFO  [io.undertow.servlet] (ServerService Thread Pool -- 97) No Spring WebApplicationInitializer types detected on classpath
+13:31:30,922 INFO  [io.undertow.servlet] (ServerService Thread Pool -- 97) Initializing Spring root WebApplicationContext
+13:31:30,923 INFO  [org.springframework.web.context.ContextLoader] (ServerService Thread Pool -- 97) Root WebApplicationContext: initialization started
+13:31:32,560 INFO  [org.springframework.beans.factory.support.DefaultListableBeanFactory] (ServerService Thread Pool -- 97) Removing alias 'mjlsMetaRepoDataSource' for bean 'dataSource' due to registration of bean definition for bean 'mjlsMetaRepoDataSource': [Root bean: class=null; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; fallback=false; factoryBeanName=jp.co.accenture.majalis.metadatarepository.impl.springdi.mb.config.MajalisMetaRepoDsTxConfig; factoryMethodName=mjlsMetaRepoDataSource; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [jp/co/accenture/majalis/metadatarepository/impl/springdi/mb/config/MajalisMetaRepoDsTxConfig.class]]
+13:31:32,597 INFO  [org.springframework.batch.core.configuration.annotation.BatchRegistrar] (ServerService Thread Pool -- 97) Bean jobRepository already defined in the application context, skipping the registration of a jobRepository
+13:31:32,598 INFO  [org.springframework.batch.core.configuration.annotation.BatchRegistrar] (ServerService Thread Pool -- 97) Bean jobExplorer already defined in the application context, skipping the registration of a jobExplorer
+13:31:32,599 INFO  [org.springframework.batch.core.configuration.annotation.BatchRegistrar] (ServerService Thread Pool -- 97) Bean jobLauncher already defined in the application context, skipping the registration of a jobLauncher
+13:31:32,599 INFO  [org.springframework.batch.core.configuration.annotation.BatchRegistrar] (ServerService Thread Pool -- 97) Bean jobRegistry already defined in the application context, skipping the registration of a jobRegistry
+13:31:32,599 INFO  [org.springframework.batch.core.configuration.annotation.BatchRegistrar] (ServerService Thread Pool -- 97) Bean jobRegistrySmartInitializingSingleton already defined in the application context, skipping the registration of a jobRegistrySmartInitializingSingleton
+13:31:32,600 INFO  [org.springframework.batch.core.configuration.annotation.BatchRegistrar] (ServerService Thread Pool -- 97) Bean jobOperator already defined in the application context, skipping the registration of a jobOperator
+13:31:32,608 INFO  [org.springframework.batch.core.configuration.annotation.BatchRegistrar] (ServerService Thread Pool -- 97) Finished Spring Batch infrastructure beans configuration in 9 ms.
+13:31:33,177 INFO  [jp.co.accenture.majalis.cbl.vsam.impl.springdi.config.VSAMComponentsConfigurationProcessor] (ServerService Thread Pool -- 97) jp.co.accenture.majalis.cbl.vsam.impl.springdi.sql.VsamDialectSupportOracleImpl will be registered as a vsamDialectSupport bean by dbVender ORACLE.
+13:31:33,179 INFO  [jp.co.accenture.majalis.cbl.vsam.impl.springdi.config.VSAMComponentsConfigurationProcessor] (ServerService Thread Pool -- 97) The bean definition of jp.co.accenture.majalis.cbl.vsam.impl.springdi.sql.VsamDialectSupportOracleImpl has been registered with the bean name: vsamDialectSupport.
+13:31:33,247 INFO  [jp.co.accenture.majalis.cbl.vsam.impl.springdi.config.VSAMComponentsConfigurationProcessor] (ServerService Thread Pool -- 97) jp.co.accenture.majalis.cbl.vsam.impl.springdi.sql.VsamDialectSupportOracleImpl will be registered as a vsamDialectSupport bean by dbVender ORACLE.
+13:31:33,287 WARN  [org.springframework.context.annotation.ConfigurationClassPostProcessor] (ServerService Thread Pool -- 97) Cannot enhance @Configuration bean definition 'jp.co.accenture.majalis.metadatarepository.impl.springdi.mb.config.MajalisMetarepoMyBatisSpringConfig' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static' and/or marking the containing configuration class as 'proxyBeanMethods=false'.
+13:31:33,561 INFO  [jp.co.accenture.majalis.cblimpl.springdi.zetal.config.MjlsCblSpringDICommonPropsConfig] (ServerService Thread Pool -- 97) loading MjlsCblSpringDICommonPropsConfig properties: classpath:majalis/majalis-arch-common.properties
+13:31:33,564 INFO  [jp.co.accenture.majalis.bat.springbat.epsilonorl.config.MjlsBatchPropsConfig] (ServerService Thread Pool -- 97) loading MjlsBatchPropsConfig properties: classpath:majalis/majalis-batch.properties
+13:31:34,073 INFO  [jp.co.accenture.majalis.cblimpl.springdi.zetal.config.MajalisDBManagerPrimaryConnSupplierInitializer] (ServerService Thread Pool -- 97) DBManagerFactory.primaryDbConnectionSupplier.supplierGetConn is initialized(dataSource:org.jboss.as.connector.subsystems.datasources.WildFlyDataSource@54b8ffe2).
+13:31:34,078 INFO  [jp.co.accenture.majalis.cblimpl.springdi.zetal.config.MajalisAppCoreSettingInitializer] (ServerService Thread Pool -- 97) The majalis-core Setting will been initialized.
+13:31:34,110 INFO  [jp.co.accenture.majalis.commonutils.ResourceUtils] (ServerService Thread Pool -- 97) ResourceFile: /majalis/majalis-app-config.json -> FileUrl:vfs:/C:/Users/futoshi.yoshizaki/content/sbod-sample-ap0-0.0.1-beta1-SNAPSHOT.war/WEB-INF/classes/majalis/majalis-app-config.json
+13:31:34,134 INFO  [scube.majalis.Setting.Setting] (ServerService Thread Pool -- 97) Setting#initInstance() majalisAppConfigPath:/majalis/majalis-app-config.json -> 46f7bc159bf347ebf380b9b6cbe5799155df0d5d
+13:31:34,152 INFO  [jp.co.accenture.majalis.commonutils.ResourceUtils] (ServerService Thread Pool -- 97) ResourceFile: /majalis/majalis-app-forenv.json -> FileUrl:vfs:/C:/Users/futoshi.yoshizaki/content/sbod-sample-ap0-0.0.1-beta1-SNAPSHOT.war/WEB-INF/classes/majalis/majalis-app-forenv.json
+13:31:34,156 INFO  [scube.majalis.Setting.Setting] (ServerService Thread Pool -- 97) Setting#initInstance() majalisAppForenvPath:/majalis/majalis-app-forenv.json -> bd4f9058ab43168cb72db82dda7782cfe3901656
+13:31:34,163 INFO  [jp.co.accenture.majalis.cblimpl.springdi.zetal.config.MajalisAppCoreSettingInitializer] (ServerService Thread Pool -- 97) The majalis-core Setting has been initialized.
+13:31:34,361 INFO  [scube.majalis.cbl.util.CblSettingUtils] (ServerService Thread Pool -- 97) [IMJLSCOM0004]静的パラメータファイル:/majalis/majalis-cbl-config-forenv.jsonを読み込みます。
+13:31:34,363 INFO  [scube.majalis.cbl.util.CblSettingUtils] (ServerService Thread Pool -- 97) Read /majalis/majalis-cbl-config-forenv.json sha1 -> 7e02dd6b315e19b0af93f9fbc20a1ec58a9aab1d
+13:31:34,392 INFO  [scube.majalis.cbl.util.CblSettingUtils] (ServerService Thread Pool -- 97) [IMJLSCOM0005]静的パラメータファイル:/majalis/majalis-cbl-config-forenv.jsonを読み込みました。
+13:31:34,403 INFO  [scube.majalis.cbl.util.CblSettingUtils] (ServerService Thread Pool -- 97) [IMJLSCOM0004]静的パラメータファイル:/majalis/majalis-cbl-config.jsonを読み込みます。
+13:31:34,406 INFO  [scube.majalis.cbl.util.CblSettingUtils] (ServerService Thread Pool -- 97) Read /majalis/majalis-cbl-config.json sha1 -> 174744ae875d4a7ecf51c9a12de4e5b6867a4973
+13:31:34,407 INFO  [scube.majalis.cbl.util.CblSettingUtils] (ServerService Thread Pool -- 97) [IMJLSCOM0005]静的パラメータファイル:/majalis/majalis-cbl-config.jsonを読み込みました。
+13:31:35,304 INFO  [jp.co.accenture.majalis.metadatarepository.util.MetadataRepositoryConfigUtils] (ServerService Thread Pool -- 97) [IMJLSCOM0004]静的パラメータファイル:/majalis/majalis-metadata-repository-config-forenv.jsonを読み込みます。
+13:31:35,307 INFO  [jp.co.accenture.majalis.metadatarepository.util.MetadataRepositoryConfigUtils] (ServerService Thread Pool -- 97) Read /majalis/majalis-metadata-repository-config-forenv.json sha1 -> bfef0cfb2041b30502094aa2a1c931b38061130e
+13:31:35,313 INFO  [jp.co.accenture.majalis.metadatarepository.util.MetadataRepositoryConfigUtils] (ServerService Thread Pool -- 97) [IMJLSCOM0005]静的パラメータファイル:/majalis/majalis-metadata-repository-config-forenv.jsonを読み込みました。
+13:31:35,315 INFO  [jp.co.accenture.majalis.metadatarepository.util.MetadataRepositoryConfigUtils] (ServerService Thread Pool -- 97) [IMJLSCOM0004]静的パラメータファイル:/majalis/majalis-metadata-repository-config.jsonを読み込みます。
+13:31:35,318 INFO  [jp.co.accenture.majalis.metadatarepository.util.MetadataRepositoryConfigUtils] (ServerService Thread Pool -- 97) Read /majalis/majalis-metadata-repository-config.json sha1 -> aceafc17e0f93500aec1fdd411fe4f8b905bdd15
+13:31:35,318 INFO  [jp.co.accenture.majalis.metadatarepository.util.MetadataRepositoryConfigUtils] (ServerService Thread Pool -- 97) [IMJLSCOM0005]静的パラメータファイル:/majalis/majalis-metadata-repository-config.jsonを読み込みました。
+13:31:35,773 INFO  [jp.co.accenture.majalis.bat.baseframe.util.MajalisBatchBaseframeConfigUtils] (ServerService Thread Pool -- 97) [IMJLSCOM0004]静的パラメータファイル:/majalis/majalis-batch-baseframe-config-forenv.jsonを読み込みます。
+13:31:35,777 INFO  [jp.co.accenture.majalis.bat.baseframe.util.MajalisBatchBaseframeConfigUtils] (ServerService Thread Pool -- 97) Read /majalis/majalis-batch-baseframe-config-forenv.json sha1 -> d60dfa1a1c990b2767a629a5b8c3044d4707f724
+13:31:35,785 INFO  [jp.co.accenture.majalis.bat.baseframe.util.MajalisBatchBaseframeConfigUtils] (ServerService Thread Pool -- 97) [IMJLSCOM0005]静的パラメータファイル:/majalis/majalis-batch-baseframe-config-forenv.jsonを読み込みました。
+13:31:35,787 INFO  [jp.co.accenture.majalis.bat.baseframe.util.MajalisBatchBaseframeConfigUtils] (ServerService Thread Pool -- 97) [IMJLSCOM0004]静的パラメータファイル:/majalis/majalis-batch-baseframe-config.jsonを読み込みます。
+13:31:35,789 INFO  [jp.co.accenture.majalis.bat.baseframe.util.MajalisBatchBaseframeConfigUtils] (ServerService Thread Pool -- 97) Read /majalis/majalis-batch-baseframe-config.json sha1 -> 7d775d9268aa0ff4b49e8df771014fbd9d8a97b8
+13:31:35,791 INFO  [jp.co.accenture.majalis.bat.baseframe.util.MajalisBatchBaseframeConfigUtils] (ServerService Thread Pool -- 97) [IMJLSCOM0005]静的パラメータファイル:/majalis/majalis-batch-baseframe-config.jsonを読み込みました。
+13:31:36,746 INFO  [jp.co.accenture.majalis.bat.baseframe.util.MajalisBatchBaseframeConfigUtils] (ServerService Thread Pool -- 97) [IMJLSCOM0004]静的パラメータファイル:/majalis/majalis-batch-baseframe-config-forenv.jsonを読み込みます。
+13:31:36,748 INFO  [jp.co.accenture.majalis.bat.baseframe.util.MajalisBatchBaseframeConfigUtils] (ServerService Thread Pool -- 97) Read /majalis/majalis-batch-baseframe-config-forenv.json sha1 -> d60dfa1a1c990b2767a629a5b8c3044d4707f724
+13:31:36,749 INFO  [jp.co.accenture.majalis.bat.baseframe.util.MajalisBatchBaseframeConfigUtils] (ServerService Thread Pool -- 97) [IMJLSCOM0005]静的パラメータファイル:/majalis/majalis-batch-baseframe-config-forenv.jsonを読み込みました。
+13:31:36,751 INFO  [jp.co.accenture.majalis.bat.baseframe.util.MajalisBatchBaseframeConfigUtils] (ServerService Thread Pool -- 97) [IMJLSCOM0004]静的パラメータファイル:/majalis/majalis-batch-baseframe-config.jsonを読み込みます。
+13:31:36,753 INFO  [jp.co.accenture.majalis.bat.baseframe.util.MajalisBatchBaseframeConfigUtils] (ServerService Thread Pool -- 97) Read /majalis/majalis-batch-baseframe-config.json sha1 -> 7d775d9268aa0ff4b49e8df771014fbd9d8a97b8
+13:31:36,754 INFO  [jp.co.accenture.majalis.bat.baseframe.util.MajalisBatchBaseframeConfigUtils] (ServerService Thread Pool -- 97) [IMJLSCOM0005]静的パラメータファイル:/majalis/majalis-batch-baseframe-config.jsonを読み込みました。
+13:31:37,081 INFO  [org.springframework.web.context.ContextLoader] (ServerService Thread Pool -- 97) Root WebApplicationContext initialized in 6157 ms
+13:31:37,194 INFO  [jakarta.enterprise.resource.webcontainer.faces.config] (ServerService Thread Pool -- 97) コンテキスト '/sbodsampleap0' の Mojarra 4.0.11.redhat-00001 を初期化します
+13:31:38,864 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 97) WFLYUT0021: 登録された web コンテキスト: '/sbodsampleap0' (サーバー 'default-server' 用)
+13:31:42,226 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0010: "febtips04-0.0.1-SNAPSHOT.war" (runtime-name : "febtips04-0.0.1-SNAPSHOT.war") をデプロイしました。
+13:31:42,226 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0010: "febtips01-0.0.1-SNAPSHOT.war" (runtime-name : "febtips01-0.0.1-SNAPSHOT.war") をデプロイしました。
+13:31:42,227 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0010: "sbod-sample-ap0-0.0.1-beta1-SNAPSHOT.war" (runtime-name : "sbod-sample-ap0-0.0.1-beta1-SNAPSHOT.war") をデプロイしました。
+13:31:42,355 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0212: サーバーを再開しています
+13:31:42,366 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0061: https://127.0.0.1:9993/management 上でリッスンする HTTP 管理インターフェース
+13:31:42,367 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0052: 管理コンソールは https://127.0.0.1:9993 をリッスンしています。
+13:31:42,372 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: JBoss EAP 8.0 Update 7.0 (WildFly Core 21.0.15.Final-redhat-00001) は 133146 ミリ秒で開始しました - サービス 1044 個のうち 854 個を開始しました (357 のサービスはレイジー、パッシブ、またはオンデマンドです) - 使用中のサーバー設定ファイル: standalone-full.xml
+13:32:25,015 INFO  [org.jboss.as.repository] (management-handler-thread - 1) WFLYDR0001: ロケーション C:\opt\jboss\eap800\standalone\data\content\ae\a5eb13659282cbf9e120421f38f257e8014358\content にコンテンツが追加されました。
+13:32:25,038 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 16) WFLYUT0022: 登録解除された web コンテキスト: '/febtips04-0.0.1-SNAPSHOT' (サーバー 'default-server' から)
+13:32:25,137 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-8) WFLYSRV0028: 114 ミリ秒後にデプロイメント febtips04-0.0.1-SNAPSHOT.war (runtime-name: febtips04-0.0.1-SNAPSHOT.war) が停止しました。
+13:32:25,148 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-6) WFLYSRV0027: "febtips04-0.0.1-SNAPSHOT.war" (runtime-name: "febtips04-0.0.1-SNAPSHOT.war") のデプロイメントを開始しました。
+13:32:26,124 INFO  [org.jboss.weld.deployer] (MSC service thread 1-6) WFLYWELD0003: Weld デプロイメント febtips04-0.0.1-SNAPSHOT.war を処理しています
+13:32:26,548 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 99) RESTEASY002225: Deploying jakarta.ws.rs.core.Application: class io.github.futokiyo.febtips01.rest.JakartaRESTActivator
+13:32:26,553 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 99) WFLYUT0021: 登録された web コンテキスト: '/febtips04-0.0.1-SNAPSHOT' (サーバー 'default-server' 用)
+13:32:26,672 INFO  [org.jboss.as.server] (management-handler-thread - 1) WFLYSRV0016: デプロイメント "febtips04-0.0.1-SNAPSHOT.war" がデプロイメント "febtips04-0.0.1-SNAPSHOT.war" に置き換えられました。
+13:32:26,683 INFO  [org.jboss.as.repository] (management-handler-thread - 1) WFLYDR0002: ロケーション C:\opt\jboss\eap800\standalone\data\content\22\82b02fdcddc5d5b7ef25ae10edd4e306093b63\content からコンテンツを削除しました。
+13:33:11,887 INFO  [stdout] (default task-1) WEIGHT_SEED.length()191962
+13:33:12,374 INFO  [io.github.futokiyo.febtips04.sample.RqstSampleForInjection] (default task-1) called RqstSampleForInjection constructor idUuid:b431adbc-450f-424a-acda-8d63f7b4740e
+13:33:12,625 INFO  [io.github.futokiyo.febtips04.sample.DpndntSampleForApplicationScopedInjection] (default task-1) called DpndntSampleForApplicationScopedInjection constructor idUuid:e64940ad-c6ce-4436-80af-396c2d15b5ae
+13:33:53,767 ERROR [org.jboss.resteasy.core.providerfactory.DefaultExceptionMapper] (default task-1) RESTEASY002375: Error processing request GET /febtips04-0.0.1-SNAPSHOT/rest4/rqst - io.github.futokiyo.febtips04.rest.HelloTips04.getRqst: org.jboss.weld.exceptions.DefinitionException: WELD-000033: Could not instantiate client proxy for org.jboss.weld.bean.proxy.ClientProxyFactory@4c075c6b
+        at org.jboss.weld.core@5.1.5.Final-redhat-00001//org.jboss.weld.bean.proxy.ProxyFactory.run(ProxyFactory.java:391)
+        at org.jboss.weld.core@5.1.5.Final-redhat-00001//org.jboss.weld.bean.proxy.ProxyFactory.create(ProxyFactory.java:373)
+        at org.jboss.weld.core@5.1.5.Final-redhat-00001//org.jboss.weld.bean.proxy.ClientProxyFactory.create(ClientProxyFactory.java:83)
+        at org.jboss.weld.core@5.1.5.Final-redhat-00001//org.jboss.weld.bean.proxy.ClientProxyProvider.createClientProxy(ClientProxyProvider.java:207)
+        at org.jboss.weld.core@5.1.5.Final-redhat-00001//org.jboss.weld.bean.proxy.ClientProxyProvider.createClientProxy(ClientProxyProvider.java:197)
+        at org.jboss.weld.core@5.1.5.Final-redhat-00001//org.jboss.weld.bean.proxy.ClientProxyProvider.access$100(ClientProxyProvider.java:44)
+        at org.jboss.weld.core@5.1.5.Final-redhat-00001//org.jboss.weld.bean.proxy.ClientProxyProvider$CreateClientProxy.apply(ClientProxyProvider.java:52)
+        at org.jboss.weld.core@5.1.5.Final-redhat-00001//org.jboss.weld.bean.proxy.ClientProxyProvider$CreateClientProxy.apply(ClientProxyProvider.java:48)
+        at org.jboss.weld.core@5.1.5.Final-redhat-00001//org.jboss.weld.util.cache.ReentrantMapBackedComputingCache.lambda$new$0(ReentrantMapBackedComputingCache.java:57)
+        at org.jboss.weld.core@5.1.5.Final-redhat-00001//org.jboss.weld.util.LazyValueHolder$1.computeValue(LazyValueHolder.java:32)
+        at org.jboss.weld.core@5.1.5.Final-redhat-00001//org.jboss.weld.util.LazyValueHolder.get(LazyValueHolder.java:46)
+        at org.jboss.weld.core@5.1.5.Final-redhat-00001//org.jboss.weld.util.cache.ReentrantMapBackedComputingCache.getValue(ReentrantMapBackedComputingCache.java:74)
+        at org.jboss.weld.core@5.1.5.Final-redhat-00001//org.jboss.weld.util.cache.ReentrantMapBackedComputingCache.getCastValue(ReentrantMapBackedComputingCache.java:80)
+        at org.jboss.weld.core@5.1.5.Final-redhat-00001//org.jboss.weld.bean.proxy.ClientProxyProvider.getClientProxy(ClientProxyProvider.java:232)
+        at org.jboss.weld.core@5.1.5.Final-redhat-00001//org.jboss.weld.manager.BeanManagerImpl.getReference(BeanManagerImpl.java:703)
+        at org.jboss.weld.core@5.1.5.Final-redhat-00001//org.jboss.weld.bean.builtin.InstanceImpl.getBeanInstance(InstanceImpl.java:267)
+        at org.jboss.weld.core@5.1.5.Final-redhat-00001//org.jboss.weld.bean.builtin.InstanceImpl.get(InstanceImpl.java:116)
+        at deployment.febtips04-0.0.1-SNAPSHOT.war//io.github.futokiyo.febtips04.rest.HelloTips04.getRqst(HelloTips04.java:90)
+        at deployment.febtips04-0.0.1-SNAPSHOT.war//io.github.futokiyo.febtips04.rest.HelloTips04$Proxy$_$$_WeldClientProxy.getRqst(Unknown Source)
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+        at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+        at org.jboss.resteasy.resteasy-core@6.2.11.Final-redhat-00001//org.jboss.resteasy.core.MethodInjectorImpl.invoke(MethodInjectorImpl.java:154)
+        at org.jboss.resteasy.resteasy-core@6.2.11.Final-redhat-00001//org.jboss.resteasy.core.MethodInjectorImpl.invoke(MethodInjectorImpl.java:118)
+        at org.jboss.resteasy.resteasy-core@6.2.11.Final-redhat-00001//org.jboss.resteasy.core.ResourceMethodInvoker.internalInvokeOnTarget(ResourceMethodInvoker.java:560)
+        at org.jboss.resteasy.resteasy-core@6.2.11.Final-redhat-00001//org.jboss.resteasy.core.ResourceMethodInvoker.invokeOnTargetAfterFilter(ResourceMethodInvoker.java:452)
+        at org.jboss.resteasy.resteasy-core@6.2.11.Final-redhat-00001//org.jboss.resteasy.core.ResourceMethodInvoker.lambda$invokeOnTarget$2(ResourceMethodInvoker.java:413)
+        at org.jboss.resteasy.resteasy-core@6.2.11.Final-redhat-00001//org.jboss.resteasy.core.interception.jaxrs.PreMatchContainerRequestContext.filter(PreMatchContainerRequestContext.java:321)
+        at org.jboss.resteasy.resteasy-core@6.2.11.Final-redhat-00001//org.jboss.resteasy.core.ResourceMethodInvoker.invokeOnTarget(ResourceMethodInvoker.java:415)
+        at org.jboss.resteasy.resteasy-core@6.2.11.Final-redhat-00001//org.jboss.resteasy.core.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:378)
+        at org.jboss.resteasy.resteasy-core@6.2.11.Final-redhat-00001//org.jboss.resteasy.core.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:356)
+        at org.jboss.resteasy.resteasy-core@6.2.11.Final-redhat-00001//org.jboss.resteasy.core.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:70)
+        at org.jboss.resteasy.resteasy-core@6.2.11.Final-redhat-00001//org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:429)
+        at org.jboss.resteasy.resteasy-core@6.2.11.Final-redhat-00001//org.jboss.resteasy.core.SynchronousDispatcher.lambda$invoke$4(SynchronousDispatcher.java:240)
+        at org.jboss.resteasy.resteasy-core@6.2.11.Final-redhat-00001//org.jboss.resteasy.core.SynchronousDispatcher.lambda$preprocess$0(SynchronousDispatcher.java:154)
+        at org.jboss.resteasy.resteasy-core@6.2.11.Final-redhat-00001//org.jboss.resteasy.core.interception.jaxrs.PreMatchContainerRequestContext.filter(PreMatchContainerRequestContext.java:321)
+        at org.jboss.resteasy.resteasy-core@6.2.11.Final-redhat-00001//org.jboss.resteasy.core.SynchronousDispatcher.preprocess(SynchronousDispatcher.java:157)
+        at org.jboss.resteasy.resteasy-core@6.2.11.Final-redhat-00001//org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:229)
+        at org.jboss.resteasy.resteasy-core@6.2.11.Final-redhat-00001//org.jboss.resteasy.plugins.server.servlet.ServletContainerDispatcher.service(ServletContainerDispatcher.java:222)
+        at org.jboss.resteasy.resteasy-core@6.2.11.Final-redhat-00001//org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:55)
+        at org.jboss.resteasy.resteasy-core@6.2.11.Final-redhat-00001//org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher.service(HttpServletDispatcher.java:51)
+        at jakarta.servlet.api@6.0.0.redhat-00006//jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614)
+        at io.undertow.servlet@2.3.18.SP1-redhat-00001//io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:74)
+        at io.undertow.servlet@2.3.18.SP1-redhat-00001//io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+        at io.undertow.servlet@2.3.18.SP1-redhat-00001//io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+        at io.undertow.servlet@2.3.18.SP1-redhat-00001//io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+        at org.wildfly.security.elytron-web.undertow-server@4.0.1.Final-redhat-00001//org.wildfly.elytron.web.undertow.server.ElytronRunAsHandler.lambda$handleRequest$1(ElytronRunAsHandler.java:68)
+        at org.wildfly.security.elytron-base@2.2.9.Final-redhat-00001//org.wildfly.security.auth.server.FlexibleIdentityAssociation.runAsFunctionEx(FlexibleIdentityAssociation.java:103)
+        at org.wildfly.security.elytron-base@2.2.9.Final-redhat-00001//org.wildfly.security.auth.server.Scoped.runAsFunctionEx(Scoped.java:161)
+        at org.wildfly.security.elytron-base@2.2.9.Final-redhat-00001//org.wildfly.security.auth.server.Scoped.runAs(Scoped.java:73)
+        at org.wildfly.security.elytron-web.undertow-server@4.0.1.Final-redhat-00001//org.wildfly.elytron.web.undertow.server.ElytronRunAsHandler.handleRequest(ElytronRunAsHandler.java:67)
+        at io.undertow.servlet@2.3.18.SP1-redhat-00001//io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
+        at io.undertow.servlet@2.3.18.SP1-redhat-00001//io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:117)
+        at io.undertow.servlet@2.3.18.SP1-redhat-00001//io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+        at io.undertow.core@2.3.18.SP1-redhat-00001//io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+        at io.undertow.core@2.3.18.SP1-redhat-00001//io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+        at io.undertow.servlet@2.3.18.SP1-redhat-00001//io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+        at io.undertow.core@2.3.18.SP1-redhat-00001//io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+        at org.wildfly.security.elytron-web.undertow-server-servlet@4.0.1.Final-redhat-00001//org.wildfly.elytron.web.undertow.server.servlet.CleanUpHandler.handleRequest(CleanUpHandler.java:38)
+        at io.undertow.core@2.3.18.SP1-redhat-00001//io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+        at org.wildfly.extension.undertow@8.0.9.GA-redhat-00004//org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+        at io.undertow.core@2.3.18.SP1-redhat-00001//io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+        at org.wildfly.extension.undertow@8.0.9.GA-redhat-00004//org.wildfly.extension.undertow.deployment.GlobalRequestControllerHandler.handleRequest(GlobalRequestControllerHandler.java:68)
+        at io.undertow.servlet@2.3.18.SP1-redhat-00001//io.undertow.servlet.handlers.SendErrorPageHandler.handleRequest(SendErrorPageHandler.java:52)
+        at io.undertow.core@2.3.18.SP1-redhat-00001//io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+        at io.undertow.servlet@2.3.18.SP1-redhat-00001//io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:276)
+        at io.undertow.servlet@2.3.18.SP1-redhat-00001//io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:135)
+        at io.undertow.servlet@2.3.18.SP1-redhat-00001//io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:132)
+        at io.undertow.servlet@2.3.18.SP1-redhat-00001//io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+        at io.undertow.servlet@2.3.18.SP1-redhat-00001//io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+        at org.wildfly.extension.undertow@8.0.9.GA-redhat-00004//org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1430)
+        at org.wildfly.extension.undertow@8.0.9.GA-redhat-00004//org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1430)
+        at org.wildfly.extension.undertow@8.0.9.GA-redhat-00004//org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1430)
+        at org.wildfly.extension.undertow@8.0.9.GA-redhat-00004//org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1430)
+        at io.undertow.servlet@2.3.18.SP1-redhat-00001//io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:256)
+        at io.undertow.servlet@2.3.18.SP1-redhat-00001//io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:101)
+        at io.undertow.core@2.3.18.SP1-redhat-00001//io.undertow.server.Connectors.executeRootHandler(Connectors.java:395)
+        at io.undertow.core@2.3.18.SP1-redhat-00001//io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:896)
+        at org.jboss.threads@2.4.0.Final-redhat-00001//org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+        at org.jboss.threads@2.4.0.Final-redhat-00001//org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:1990)
+        at org.jboss.threads@2.4.0.Final-redhat-00001//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1486)
+        at org.jboss.threads@2.4.0.Final-redhat-00001//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1377)
+        at org.jboss.xnio@3.8.16.Final-redhat-00001//org.xnio.XnioWorker$WorkerThreadFactory$1$1.run(XnioWorker.java:1282)
+        at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.lang.OutOfMemoryError: Java heap space
+        at java.base/java.util.Arrays.copyOf(Arrays.java:3537)
+        at java.base/java.lang.AbstractStringBuilder.ensureCapacityInternal(AbstractStringBuilder.java:228)
+        at java.base/java.lang.AbstractStringBuilder.append(AbstractStringBuilder.java:582)
+        at java.base/java.lang.StringBuilder.append(StringBuilder.java:179)
+        at deployment.febtips04-0.0.1-SNAPSHOT.war//io.github.futokiyo.febtips04.utils.WeightUtils.generateWeight(WeightUtils.java:48)
+        at deployment.febtips04-0.0.1-SNAPSHOT.war//io.github.futokiyo.febtips04.sample.RqstSampleForDinamicLookup.<init>(RqstSampleForDinamicLookup.java:20)
+        at deployment.febtips04-0.0.1-SNAPSHOT.war//io.github.futokiyo.febtips04.sample.RqstSampleForDinamicLookup$Proxy$_$$_WeldClientProxy.<init>(Unknown Source)
+        at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+        at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+        at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+        at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+        at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+        at org.jboss.weld.core@5.1.5.Final-redhat-00001//org.jboss.weld.bean.proxy.DefaultProxyInstantiator.newInstance(DefaultProxyInstantiator.java:45)
+        at org.jboss.weld.core@5.1.5.Final-redhat-00001//org.jboss.weld.bean.proxy.ProxyFactory.run(ProxyFactory.java:389)
+        at org.jboss.weld.core@5.1.5.Final-redhat-00001//org.jboss.weld.bean.proxy.ProxyFactory.create(ProxyFactory.java:373)
+        at org.jboss.weld.core@5.1.5.Final-redhat-00001//org.jboss.weld.bean.proxy.ClientProxyFactory.create(ClientProxyFactory.java:83)
+        at org.jboss.weld.core@5.1.5.Final-redhat-00001//org.jboss.weld.bean.proxy.ClientProxyProvider.createClientProxy(ClientProxyProvider.java:207)
+        at org.jboss.weld.core@5.1.5.Final-redhat-00001//org.jboss.weld.bean.proxy.ClientProxyProvider.createClientProxy(ClientProxyProvider.java:197)
+        at org.jboss.weld.core@5.1.5.Final-redhat-00001//org.jboss.weld.bean.proxy.ClientProxyProvider.access$100(ClientProxyProvider.java:44)
+        at org.jboss.weld.core@5.1.5.Final-redhat-00001//org.jboss.weld.bean.proxy.ClientProxyProvider$CreateClientProxy.apply(ClientProxyProvider.java:52)
+        at org.jboss.weld.core@5.1.5.Final-redhat-00001//org.jboss.weld.bean.proxy.ClientProxyProvider$CreateClientProxy.apply(ClientProxyProvider.java:48)
+        at org.jboss.weld.core@5.1.5.Final-redhat-00001//org.jboss.weld.util.cache.ReentrantMapBackedComputingCache.lambda$new$0(ReentrantMapBackedComputingCache.java:57)
+        at org.jboss.weld.core@5.1.5.Final-redhat-00001//org.jboss.weld.util.cache.ReentrantMapBackedComputingCache$$Lambda$1385/0x000001fc68d6b760.get(Unknown Source)
+        at org.jboss.weld.core@5.1.5.Final-redhat-00001//org.jboss.weld.util.LazyValueHolder$1.computeValue(LazyValueHolder.java:32)
+        at org.jboss.weld.core@5.1.5.Final-redhat-00001//org.jboss.weld.util.LazyValueHolder.get(LazyValueHolder.java:46)
+        at org.jboss.weld.core@5.1.5.Final-redhat-00001//org.jboss.weld.util.cache.ReentrantMapBackedComputingCache.getValue(ReentrantMapBackedComputingCache.java:74)
+        at org.jboss.weld.core@5.1.5.Final-redhat-00001//org.jboss.weld.util.cache.ReentrantMapBackedComputingCache.getCastValue(ReentrantMapBackedComputingCache.java:80)
+        at org.jboss.weld.core@5.1.5.Final-redhat-00001//org.jboss.weld.bean.proxy.ClientProxyProvider.getClientProxy(ClientProxyProvider.java:232)
+        at org.jboss.weld.core@5.1.5.Final-redhat-00001//org.jboss.weld.manager.BeanManagerImpl.getReference(BeanManagerImpl.java:703)
+        at org.jboss.weld.core@5.1.5.Final-redhat-00001//org.jboss.weld.bean.builtin.InstanceImpl.getBeanInstance(InstanceImpl.java:267)
+        at org.jboss.weld.core@5.1.5.Final-redhat-00001//org.jboss.weld.bean.builtin.InstanceImpl.get(InstanceImpl.java:116)
+        at deployment.febtips04-0.0.1-SNAPSHOT.war//io.github.futokiyo.febtips04.rest.HelloTips04.getRqst(HelloTips04.java:90)

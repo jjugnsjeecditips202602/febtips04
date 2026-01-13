@@ -1,0 +1,365 @@
+/*
+ * Copyright The WildFly Authors
+ * SPDX-License-Identifier: Apache-2.0
+ */
+package io.github.futokiyo.febtips04.rest;
+
+
+import io.github.futokiyo.febtips04.sample.DpndntSampleForApplicationScopedInjection;
+import io.github.futokiyo.febtips04.sample.DpndntSampleForDynamicLookup;
+import io.github.futokiyo.febtips04.sample.RqstSampleForDynamicLookup;
+import io.github.futokiyo.febtips04.sample.RqstSampleForInjection;
+
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.context.RequestScoped;
+import jakarta.enterprise.inject.Any;
+import jakarta.enterprise.inject.Instance;
+import jakarta.enterprise.inject.spi.Bean;
+import jakarta.enterprise.inject.spi.BeanManager;
+import jakarta.enterprise.inject.spi.CDI;
+import jakarta.enterprise.util.AnnotationLiteral;
+import jakarta.inject.Inject;
+import jakarta.ws.rs.GET;
+import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.MediaType;
+import org.jboss.weld.context.api.ContextualInstance;
+import org.jboss.weld.contexts.SerializableContextualInstanceImpl;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+//import java.io.Serializable;
+
+/**
+ * CDI.current().select(クラスobject).get()という方法で動的に取得したBeanのメモリが解放されるかを確認する。
+ *
+ */
+
+@Path("/")
+@ApplicationScoped
+public class HelloTips04 {
+
+    private static Logger logger = LoggerFactory.getLogger(HelloTips04.class);
+
+ //   @Inject
+    private RqstSampleForInjection rqstSampleForInjection;
+
+//    @Inject
+    private RqstSampleForDynamicLookup rqstSampleForDynamicLookupByInjection;
+
+
+//    @Inject
+    private DpndntSampleForApplicationScopedInjection dpndntSampleForAppInjcton;
+
+    Instance<DpndntSampleForDynamicLookup> instance = CDI.current().select(DpndntSampleForDynamicLookup.class);
+
+    @GET
+    @Path("/beanlist")
+    @Produces(MediaType.TEXT_HTML)
+    public String getBeanList() {
+        BeanManager beanManager = CDI.current().getBeanManager();
+        Set<Bean<?>> beanSet = beanManager.getBeans(Object.class, new AnnotationLiteral<Any>(){});
+        Map<String, Integer> counter = new HashMap<>();
+        Map<String, List<String>> scopeMap = new HashMap<>();
+        for(Bean<?> bean : beanSet) {
+            String fqcn = bean.getBeanClass().getCanonicalName();
+            String scopeName = bean.getScope().getName().replace("jakarta.enterprise.context.", "");
+            if(!counter.containsKey(fqcn)) {
+                counter.put(fqcn, 1);
+                List<String> list = new ArrayList<>();
+                list.add(scopeName);
+                scopeMap.put(fqcn, list);
+            } else {
+                int num = counter.get(fqcn);
+                counter.put(fqcn, num+1);
+
+                List<String> list = scopeMap.get(fqcn);
+                list.add(scopeName);
+                scopeMap.put(fqcn, list);
+            }
+        }
+
+        StringBuilder returningSb = new StringBuilder("<html><body>");
+        counter.keySet().stream().sorted().forEach(clazzNm -> {
+            returningSb.append(clazzNm + " size:" + counter.get(clazzNm))
+                    .append(" scope:" + String.join(",", scopeMap.get(clazzNm)))
+                    .append("<br />");
+        });
+
+        returningSb.append("</body></html>");
+        return returningSb.toString();
+    }
+
+    @GET
+    @Path("/rqst")
+    @Produces(MediaType.TEXT_HTML)
+    public String getRqst() {
+        RqstSampleForDynamicLookup rqstSampleForDynamicLookup = CDI.current().select(RqstSampleForDynamicLookup.class).get();
+        StringBuilder returningSb = new StringBuilder("<html><body>");
+        returningSb.append("<p>RequestScoped Object (CDI.current().select(RqstSampleForDynamicLookup.class).get()) rqstSampleForDynamicLookup.idUuid:")
+                .append(rqstSampleForDynamicLookup.getIdentificationUuid())
+                .append("</p><br />");
+                //.append(String.format( "rqstSampleForInjection:idUuid:%1$s -> injectedDpndntSampleUuid:%2$s." , rqstSampleForInjection.getIdentificationUuid() , rqstSampleForInjection.getIdUuidOfDpndntSampleForRInjcton() ))
+
+       if(rqstSampleForDynamicLookup==this.rqstSampleForDynamicLookupByInjection
+       && rqstSampleForDynamicLookup.getIdentificationUuid().equals(this.rqstSampleForDynamicLookupByInjection.getIdentificationUuid())
+       && rqstSampleForDynamicLookup.getWeight().equals(this.rqstSampleForDynamicLookupByInjection.getWeight())){
+           returningSb.append("<p>rqstSampleForDynamicLookup equals rqstSampleForDynamicLookupByInjection</p>");
+       }
+
+        returningSb.append("<br />")
+                .append("<p>DpndntSampleForApplicationScopedInjection.idUuid:")
+                .append(this.dpndntSampleForAppInjcton.getIdentificationUuid())
+                .append("</p><br />");
+
+        returningSb.append(generateMemoryUsage())
+                .append("<br />");
+        returningSb.append("</body></html>");
+        return returningSb.toString();
+    }
+
+    @GET
+    @Path("/dpndnt")
+    @Produces(MediaType.TEXT_HTML)
+    public String getDpndnt() {
+        //DpndntSampleForDynamicLookup dpndntSampleForDynamicLookup = CDI.current().select(DpndntSampleForDynamicLookup.class).get();
+
+        //Instance<DpndntSampleForDynamicLookup> instance = CDI.current().select(DpndntSampleForDynamicLookup.class);
+        org.jboss.weld.bean.builtin.InstanceImpl<DpndntSampleForDynamicLookup> instanceImpl =  (org.jboss.weld.bean.builtin.InstanceImpl<DpndntSampleForDynamicLookup>) instance;
+
+        Method getCreationalContextMthd = null;
+        try {
+            getCreationalContextMthd = org.jboss.weld.bean.builtin.AbstractFacade.class.getDeclaredMethod("getCreationalContext");
+            getCreationalContextMthd.setAccessible(true);
+        } catch (NoSuchMethodException e) {
+            throw new RuntimeException(e);
+        }
+
+        org.jboss.weld.contexts.CreationalContextImpl creationalContextImpl = null;
+        try {
+            creationalContextImpl = (org.jboss.weld.contexts.CreationalContextImpl) getCreationalContextMthd.invoke(instance, new Object[]{});
+        } catch (IllegalAccessException|InvocationTargetException e) {
+            throw new RuntimeException(e);
+        }
+
+
+        Field dependentInstancesField = null;
+        try {
+            dependentInstancesField = org.jboss.weld.contexts.CreationalContextImpl.class.getDeclaredField("dependentInstances");
+            dependentInstancesField.setAccessible(true);
+        } catch (NoSuchFieldException e) {
+            throw new RuntimeException(e);
+        }
+
+        List<ContextualInstance<?>> dependentInstances = null;
+        try {
+            dependentInstances = (List<ContextualInstance<?>>) dependentInstancesField.get(creationalContextImpl);
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
+
+        // 疑似的にContextualInstanceを生成
+        Field jeespiBeanField = null;
+        try{
+            jeespiBeanField = org.jboss.weld.bean.builtin.InstanceImpl.class.getDeclaredField("bean");
+            jeespiBeanField.setAccessible(true);
+        } catch (NoSuchFieldException e) {
+            throw new RuntimeException(e);
+        }
+
+        jakarta.enterprise.inject.spi.Bean jeespiBean = null;
+        try {
+            jeespiBean = (jakarta.enterprise.inject.spi.Bean<?>) jeespiBeanField.get(instanceImpl);
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
+
+        // BeanManagerを取得し、DependentContextImplにアクセス
+        Method getBeanManagerMthd = null;
+        try{
+            getBeanManagerMthd = org.jboss.weld.bean.builtin.AbstractFacade.class.getDeclaredMethod("getBeanManager");
+            getBeanManagerMthd.setAccessible(true);
+        } catch (NoSuchMethodException e) {
+            throw new RuntimeException(e);
+        }
+        org.jboss.weld.manager.BeanManagerImpl beanManager = null;
+        try {
+            beanManager = (org.jboss.weld.manager.BeanManagerImpl) getBeanManagerMthd.invoke(instance, new Object[]{});
+        } catch (IllegalAccessException|InvocationTargetException e) {
+            throw new RuntimeException(e);
+        }
+
+        jakarta.enterprise.context.spi.Context dependentContextImpl = beanManager.getContext(jeespiBean.getScope());
+        // dependentContextImplからContextualStoreインスタンスを取得する。
+        Field contextualStoreField = null;
+        try{
+            contextualStoreField = org.jboss.weld.contexts.unbound.DependentContextImpl.class.getDeclaredField("contextualStore");
+            contextualStoreField.setAccessible(true);
+        } catch (NoSuchFieldException e) {
+            throw new RuntimeException(e);
+        }
+        org.jboss.weld.serialization.spi.ContextualStore contextualStore =null;
+        try{
+            contextualStore = (org.jboss.weld.serialization.spi.ContextualStore) contextualStoreField.get(dependentContextImpl);
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
+
+        // 要素が空ならば、強制敵にdependentInstancesに追加
+        if(dependentInstances.size()<1){
+            dependentInstances.add(new SerializableContextualInstanceImpl(jeespiBean, instanceImpl, creationalContextImpl, contextualStore));
+        }
+
+
+
+        DpndntSampleForDynamicLookup dpndntSampleForDynamicLookup = instance.get();
+
+                        StringBuilder returningSb = new StringBuilder("<html><body>");
+        returningSb.append("<p>Dependent Object (CDI.current().select(DpndntSample.class).get()) dpndntSampleForDynamicLookup.idUuid:")
+                .append(dpndntSampleForDynamicLookup.getIdentificationUuid())
+                .append("</p><br />")
+                .append(String.format( "rqstSampleForInjection:idUuid:%1$s -> injectedDpndntSampleUuid:%2$s." , rqstSampleForInjection.getIdentificationUuid() , rqstSampleForInjection.getIdUuidOfDpndntSampleForRInjcton() ))
+                .append("<br />")
+                .append("<p>DpndntSampleForApplicationScopedInjection.idUuid:")
+                .append(this.dpndntSampleForAppInjcton.getIdentificationUuid())
+                .append("</p><br />");
+
+        System.out.println(creationalContextImpl + "dependentInstances size " + creationalContextImpl.getDependentInstances().size() + " isEmpty -> " + creationalContextImpl.getDependentInstances().isEmpty());
+
+        Field parentDependentInstancesField = null;
+        try {
+            parentDependentInstancesField = org.jboss.weld.contexts.CreationalContextImpl.class.getDeclaredField("parentDependentInstances");
+        } catch (NoSuchFieldException e) {
+            throw new RuntimeException(e);
+        }
+        parentDependentInstancesField.setAccessible(true);
+        List<ContextualInstance<?>> parentDependentInstances = null;
+        try {
+            parentDependentInstances = (List<ContextualInstance<?>>) parentDependentInstancesField.get(creationalContextImpl);
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("parentDependentInstances size " + parentDependentInstances.size());
+
+
+
+        returningSb.append(generateMemoryUsage())
+                .append("<br />");
+//        returningSb.append("</body></html>");
+//        CDI.current().destroy(dpndntSample);
+//        return returningSb.toString();
+        return returningSb.toString();
+    }
+
+    @GET
+    @Path("/memoryusage")
+    public String getMemoryUsage() {
+        StringBuilder returningSb = new StringBuilder("<html><body><p>");
+        returningSb.append(generateMemoryUsage());
+        returningSb.append("</p></body></html>");
+        return returningSb.toString();
+    }
+
+    private void destroyCDIDependentBean(Object object) {
+        // Weld Proxyインターフェースを実装している場合、CDI Bean Scopeが疑似スコープ(Dependent)の場合にのみdestroy
+        if (object instanceof org.jboss.weld.bean.proxy.ProxyObject) {
+            BeanManager beanManager = CDI.current().getBeanManager();
+            Class<?> clazz = object.getClass();
+            do{
+                Bean<?> spiBean = null;
+                try {
+                    spiBean = obtainResolvedBean(beanManager, clazz, object);
+                } catch (Exception e) {
+                    return ;
+                }
+
+                if (spiBean!=null) {
+                    // 疑似スコープ(Dependentスコープ)の場合、destroy実行
+                    if(!beanManager.isNormalScope(spiBean.getScope())) {
+                        // オブジェクトを破棄
+                        CDI.current().destroy(object);
+                    }
+                    return;
+                }
+                clazz = clazz.getSuperclass();
+                // WELD-001318 AmbiguousResolutionException 対策
+                if(clazz == Object.class) {
+                    logger.warn("false is returned forcely to avoid an AmbiguousResolution. object: " + object
+                            + ", class of object:" + object.getClass().getCanonicalName()
+                            + ", clazz:" + clazz.getCanonicalName()
+                            + "." );
+                    return;
+                }
+            } while (clazz != Object.class);
+        }
+
+    }
+
+    private boolean isPsuedoProxy(Object object) {
+        if(object instanceof org.jboss.weld.bean.proxy.ProxyObject) {
+            BeanManager beanManager = CDI.current().getBeanManager();
+            Class<?> clazz = object.getClass();
+            do {
+                Bean<?> spiBean = null;
+                try{
+                    spiBean = obtainResolvedBean(beanManager, clazz, object);
+                } catch (Exception e) {
+                    return false;
+                }
+                // Dependentスコープ or SingletonスコープのCDI Beanの場合 true。spiBean==nullまたはNormalScopeの場合false
+                if (spiBean!=null) {
+                    return !beanManager.isNormalScope(spiBean.getScope());
+                }
+                clazz = clazz.getSuperclass();
+                // WELD-001318 AmbiguousResolutionExceptionを回避するため抽象度の高いクラス指定はここで処理する。
+                if(clazz == Object.class) {
+                    logger.warn("False is returned forcely to avoid an AmbiguousResolution. object: " + object
+                            + ", class of object:" + object.getClass().getCanonicalName()
+                            + ", clazz:" + clazz.getCanonicalName()
+                            + "." );
+                    return false;
+                }
+
+            } while (clazz != Object.class);
+            return false;
+        } else {
+            return object!=null;
+        }
+    }
+
+    private Bean<?> obtainResolvedBean(BeanManager beanManager, Class<?> clazz, Object object) throws Exception {
+        Bean<?> bean = null;
+        try {
+            bean = beanManager.resolve(beanManager.getBeans(clazz));
+        } catch (Exception e){
+            logger.warn("An exception occurred when executing clazz's beanManager resolve. object: " + object
+                            + ", class of object:" + object.getClass().getCanonicalName()
+                            + ", clazz:" + clazz.getCanonicalName()
+                            + ", exception :" + e.getClass().getCanonicalName()
+                            + ", exception message:" + e.getMessage()
+                    , e);
+
+            throw e;
+
+        }
+
+        return bean;
+    }
+
+    private String generateMemoryUsage() {
+
+        long total = Runtime.getRuntime().totalMemory();
+        long free = Runtime.getRuntime().freeMemory();
+        return "total:" + (total/(1024*1024)) + "MB, free:" + (free/(1024*1024)) + "MB, usage:" + ((total - free)/(1024*1024)) + "MB";
+    }
+
+}
