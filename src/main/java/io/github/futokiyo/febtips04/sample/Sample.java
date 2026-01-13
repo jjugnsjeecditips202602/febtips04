@@ -23,10 +23,12 @@ public class Sample implements Serializable {
         logger.info("called DpndntSampleForDynamicLookup Sample constructor idUuid:{}", this.identificationUuid);
     }
 
+    @Logging
     public String getIdentificationUuid(){
         return this.identificationUuid;
     }
 
+    @Logging
     public String getWeight(){
         return this.weight;
     }
