@@ -12,6 +12,7 @@ import io.github.futokiyo.febtips04.sample.RqstSampleForInjection;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.inject.Any;
+import jakarta.enterprise.inject.Instance;
 import jakarta.enterprise.inject.spi.Bean;
 import jakarta.enterprise.inject.spi.BeanManager;
 import jakarta.enterprise.inject.spi.CDI;
@@ -25,6 +26,8 @@ import jakarta.ws.rs.core.MediaType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -127,10 +130,24 @@ public class HelloTips04 {
         StringBuilder returningSb = new StringBuilder("<html><body>");
         returningSb.append("<p>Dependent Object (CDI.current().select(Sample.class).get()) sample.idUuid:")
                 .append(sample.getIdentificationUuid())
-                .append("</p><br />")
-                .append(generateMemoryUsage())
-                .append("<br />");
+                .append("</p><br />");
+
+        // destroyCDIDependentBeanのコメントアウトを解除することで、
+        // CreationalContextImpl.dependentInstancesがDependentスコープのSampleインスタンスを参照しなくなることを確認する。
         //destroyCDIDependentBean(sample);
+
+        returningSb.append(generateMemoryUsage())
+                .append("<br />");
+
+        List<org.jboss.weld.context.api.ContextualInstance<?>> dependentInstances = obtainDependentInstances();
+        returningSb.append("<p>dependentInstances.size() : " + dependentInstances.size() + "</p><br />");
+        int ctr = 0;
+        for(org.jboss.weld.context.api.ContextualInstance contextualInstance : dependentInstances){
+            returningSb.append("<p>dependentInstance[" + ctr + "].idUuid:" + ((Sample) contextualInstance.getInstance()).getIdentificationUuid() + "</p><br />");
+            ctr++;
+        }
+
+
         return returningSb.toString();
     }
 
@@ -226,6 +243,28 @@ public class HelloTips04 {
         long total = Runtime.getRuntime().totalMemory();
         long free = Runtime.getRuntime().freeMemory();
         return "total:" + (total/(1024*1024)) + "MB, free:" + (free/(1024*1024)) + "MB, usage:" + ((total - free)/(1024*1024)) + "MB";
+    }
+
+
+    private List<org.jboss.weld.context.api.ContextualInstance<?>> obtainDependentInstances(){
+        Instance<Sample> instance = CDI.current().select(Sample.class);
+        org.jboss.weld.bean.builtin.InstanceImpl<Sample> instanceImpl =  (org.jboss.weld.bean.builtin.InstanceImpl<Sample>) instance;
+        Method getCreationalContextMthd = null;
+        try {
+            getCreationalContextMthd = org.jboss.weld.bean.builtin.AbstractFacade.class.getDeclaredMethod("getCreationalContext");
+            getCreationalContextMthd.setAccessible(true);
+        } catch (NoSuchMethodException e) {
+            throw new RuntimeException(e);
+        }
+
+        org.jboss.weld.contexts.CreationalContextImpl creationalContextImpl = null;
+        try {
+            creationalContextImpl = (org.jboss.weld.contexts.CreationalContextImpl) getCreationalContextMthd.invoke(instance, new Object[]{});
+            return creationalContextImpl.getDependentInstances();
+
+        } catch (IllegalAccessException | InvocationTargetException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }
