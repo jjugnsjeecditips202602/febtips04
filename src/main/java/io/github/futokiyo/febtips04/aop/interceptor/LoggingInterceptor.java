@@ -21,7 +21,7 @@ public class LoggingInterceptor {
 
 	
 	@AroundInvoke
-	public Object manageUserTransaction(final InvocationContext invocationContext) throws Exception {
+	public Object printLog(final InvocationContext invocationContext) throws Exception {
 		String clazzName = invocationContext.getTarget().getClass().getCanonicalName();
 		String methodName = invocationContext.getMethod().getName();
 		logger.info("{}#{} start.", clazzName, methodName);
