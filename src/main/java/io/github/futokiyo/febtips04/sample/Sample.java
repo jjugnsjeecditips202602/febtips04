@@ -1,7 +1,7 @@
 package io.github.futokiyo.febtips04.sample;
 
 import io.github.futokiyo.febtips04.utils.WeightUtils;
-import io.github.futokiyo.febtips04.aop.Logging;
+
 import jakarta.enterprise.context.Dependent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,12 +23,12 @@ public class Sample implements Serializable {
         logger.info("called DpndntSampleForDynamicLookup Sample constructor idUuid:{}", this.identificationUuid);
     }
 
-    @Logging
+
     public String getIdentificationUuid(){
         return this.identificationUuid;
     }
 
-    @Logging
+
     public String getWeight(){
         return this.weight;
     }
