@@ -103,4 +103,39 @@ http://localhost:8080/febtips04-0.0.1-SNAPSHOT/rest4/memoryusage
 
 と打ち込み、freeの表示が低いままで、なかなか増えないこと（DependentスコープのBeanインスタンスのメモリが解放されないこと）を確認する。
 
+## 勉強会の振り返り
 
+### 勉強会イベントのサイト
+
+[Jakarta EE&MicroProfileセミナー「Jakarta CDI特集(実践的活用方法とAI領域への拡張)」 | 日本 Jakarta EE & MicroProfile ユーザーグループ](https://jakartaee.doorkeeper.jp/events/194702)
+
+#### スライド
+
+https://speakerdeck.com/futokiyo/cdinowu-jie-sigatinashi-yang-tosonodui-chu-tips
+
+#### ソースコード
+
+1. [TIPS01 WELD-000075 DefinitionException トラブル](https://github.com/jjugnsjeecditips202602/febtips01)
+2. [TIPS02 同クラス内のメソッドを呼び出すとインターセプターが掛からない](https://github.com/jjugnsjeecditips202602/febtips02)
+    1. [おまけ TIPS02をSpring Bootで組んでみた例](https://github.com/jjugnsjeecditips202602/febtips02springcglib)
+3. [TIPS03 beans.xmlのbean-discovery-mode="none"でBeanが検知されなくなる](https://github.com/jjugnsjeecditips202602/febtips03)
+4. [TIPS04 Dependentスコープのインスタンスがメモリ解放されない](https://github.com/jjugnsjeecditips202602/febtips04)
+    1. [おまけ TIPS04をQuarkus ArCで組んでみた例](https://github.com/jjugnsjeecditips202602/febtips04quarkusarc)
+    2. [おまけ TIPS04をSpring Bootで組んでみた例](https://github.com/jjugnsjeecditips202602/febtips04springaware)
+5. [ボツネタ TIPS5 jBatchでStepScopeのようなことを実現したい](https://github.com/jjugnsjeecditips202602/febtips05)
+
+#### 勉強会振り返りブログ
+
+[JakartaEE&MicroProfile（JakartaCDI特集） - システム開発で思うところ](https://vermeer.hatenablog.jp/entry/2026/02/26/234728)
+
+[Jakarta EE&MicroProfileセミナー「Jakarta CDI特集(実践的活用方法とAI領域への拡張)」に参加しました #JakartaEE | yusuke.blog](https://yusuke.blog/2026/02/25/3581)
+
+[Jakarta EE&MicroProfileセミナー「Jakarta CDI特集(実践的活用方法とAI領域への拡張)」 を開催してきた | 水まんじゅう2](https://megascus.hatenablog.com/entry/2026/02/28/191040)
+
+[日本 Jakarta EE & MicroProfile ユーザーグループ 第1回勉強会にて登壇](https://www.linkedin.com/pulse/%E6%97%A5%E6%9C%AC-jakarta-ee-microprofile-%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%E3%82%B0%E3%83%AB%E3%83%BC%E3%83%97-%E7%AC%AC1%E5%9B%9E%E5%8B%89%E5%BC%B7%E4%BC%9A%E3%81%AB%E3%81%A6%E7%99%BB%E5%A3%87-futoshi-yoshizaki-pidsc/?trackingId=RvdZmX9zFgU5lFq4bHguEQ%3D%3D)
+
+#### TIPS04で課題の論点になったDependentの動的ルックアップに関するWeldとQuarkus ArCの挙動の違いについて
+
+[#WELD-2834 Optimize how Weld keeps references to dependent instances within CreationalContext (最初のチケット名は「Conditions under which CreationalContextImpl.dependences continues to reference the looked-up Dependent instance」だったが途中で改題された)](https://issues.redhat.com/browse/WELD-2834)
+
+[In Quarkus ArC, under what conditions does CreationalContextImpl.dependences continue to reference a Dependent instance? #52749](https://github.com/quarkusio/quarkus/issues/52749)
