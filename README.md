@@ -138,4 +138,8 @@ https://speakerdeck.com/futokiyo/cdinowu-jie-sigatinashi-yang-tosonodui-chu-tips
 
 [#WELD-2834 Optimize how Weld keeps references to dependent instances within CreationalContext (最初のチケット名は「Conditions under which CreationalContextImpl.dependences continues to reference the looked-up Dependent instance」だったが途中で改題された)](https://issues.redhat.com/browse/WELD-2834)
 
+[Weld 7.0.0.Alpha2(Jakarta EE 12準拠)に対するプルリクエスト#3314](https://github.com/weld/core/pull/3314)
+
+[Weld 6.0.5.Final(Jakarta EE 11準拠)に対するプルリクエスト#3315](https://github.com/weld/core/pull/3315)
+
 [In Quarkus ArC, under what conditions does CreationalContextImpl.dependences continue to reference a Dependent instance? #52749](https://github.com/quarkusio/quarkus/issues/52749)
