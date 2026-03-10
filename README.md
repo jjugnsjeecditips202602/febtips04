@@ -143,3 +143,15 @@ https://speakerdeck.com/futokiyo/cdinowu-jie-sigatinashi-yang-tosonodui-chu-tips
 [Weld 6.0.5.Final(Jakarta EE 11準拠)に対するプルリクエスト#3315](https://github.com/weld/core/pull/3315)
 
 [In Quarkus ArC, under what conditions does CreationalContextImpl.dependences continue to reference a Dependent instance? #52749](https://github.com/quarkusio/quarkus/issues/52749)
+
+#### Dependentの動的ルックアップによるメモリリークを話題にしているページ
+
+[CDI | Application / Dependent Scope | Memory Leak - javax.enterprise.inject.Instance<T> Not Garbage Collected](https://stackoverflow.com/questions/49388648/cdi-application-dependent-scope-memory-leak-javax-enterprise-inject-inst)
+
+[Request for rule to check CDI.current usage to prevent memory leak - GitHub jborgers/PMD-jPinpoint-rules/issues/28](https://github.com/jborgers/PMD-jPinpoint-rules/issues/28)
+
+[Document the need to destroy a bean that was injected via Instance #584](https://github.com/jakartaee/cdi/issues/584)
+
+[I use the Instance API to obtain bean instances. Why does it seem to cause a memory leak? - Weld FAQ](https://weld.cdi-spec.org/documentation/#6)
+
+[Don’t get trapped into a memory leak using CDI Instance Injection - Spree-Blog](https://blog.spree.de/2017/01/04/dont-get-trapped-into-a-memory-leak-using-cdi-instance-injection/)
